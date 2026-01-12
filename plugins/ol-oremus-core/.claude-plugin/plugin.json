@@ -1,0 +1,9 @@
+{
+  "name": "ol-oremus-core",
+  "description": "Oremus Labs core Claude Code plugin with commands, skills, hooks, and GitHub MCP",
+  "version": "1.0.0",
+  "author": {
+    "name": "Oremus Labs",
+    "email": "steven.buglione@oremuslabs.app"
+  }
+}

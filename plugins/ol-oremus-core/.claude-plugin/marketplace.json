@@ -8,14 +8,14 @@
   },
   "plugins": [
     {
-      "name": "ol-oremus-core",
-      "description": "Oremus Labs core Claude Code plugin with commands, skills, hooks, and MCP",
+      "name": "ol-oremus-plugin",
+      "description": "Oremus Labs user-scope Claude Code plugin with commands, skills, hooks, and MCP",
       "version": "1.0.0",
       "author": {
         "name": "Oremus Labs",
         "email": "steven.buglione@oremuslabs.app"
       },
-      "source": "./plugins/ol-oremus-core",
+      "source": "./",
       "category": "productivity",
       "strict": false
     }
