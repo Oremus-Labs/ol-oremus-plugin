@@ -1,7 +1,6 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "ol-oremus-plugin",
-  "description": "Oremus Labs Claude Code plugin marketplace",
+  "name": "ol-oremus-plugins",
+  "description": "Oremus Labs Claude Code plugins marketplace",
   "owner": {
     "name": "Oremus Labs",
     "email": "steven.buglione@oremuslabs.app"
