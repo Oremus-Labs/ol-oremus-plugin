@@ -1,0 +1,15 @@
+{
+  "name": "ol-oremus-plugin",
+  "description": "Oremus Labs Claude Code plugin marketplace",
+  "plugins": [
+    {
+      "name": "ol-oremus-plugin",
+      "description": "Oremus Labs user-scope Claude Code plugin with commands, skills, hooks, and MCP",
+      "source": {
+        "type": "github",
+        "owner": "Oremus-Labs",
+        "repo": "ol-oremus-plugin"
+      }
+    }
+  ]
+}
