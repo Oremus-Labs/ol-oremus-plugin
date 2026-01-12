@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_PAT}"
+      }
+    }
+  },
+  "mcpServers": {
+    "searxng": {
+      "command": "npx",
+      "args": ["-y", "mcp-searxng"],
+      "env": {
+        "SEARXNG_URL": "https://search.oremuslabs.app"
+      }
+    }
+  }
+}
