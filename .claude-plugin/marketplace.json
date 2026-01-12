@@ -1,15 +1,23 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "ol-oremus-plugin",
   "description": "Oremus Labs Claude Code plugin marketplace",
+  "owner": {
+    "name": "Oremus Labs",
+    "email": "steven.buglione@oremuslabs.app"
+  },
   "plugins": [
     {
       "name": "ol-oremus-plugin",
       "description": "Oremus Labs user-scope Claude Code plugin with commands, skills, hooks, and MCP",
-      "source": {
-        "type": "github",
-        "owner": "Oremus-Labs",
-        "repo": "ol-oremus-plugin"
-      }
+      "version": "1.0.0",
+      "author": {
+        "name": "Oremus Labs",
+        "email": "steven.buglione@oremuslabs.app"
+      },
+      "source": "./",
+      "category": "productivity",
+      "strict": false
     }
   ]
 }
