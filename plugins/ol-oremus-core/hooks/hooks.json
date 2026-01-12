@@ -1,3 +1,15 @@
 {
-  "hooks": {}
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "WebFetch|WebSearch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"block\": true, \"message\": \"Use SearXNG MCP (mcp__searxng__web_url_read) instead. Only fall back to WebFetch/WebSearch after user confirmation.\"}' >&2; exit 2"
+          }
+        ]
+      }
+    ]
+  }
 }

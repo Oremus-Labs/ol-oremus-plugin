@@ -36,4 +36,4 @@ Pick 3-7 results, prioritizing:
 - Lead with the answer.
 - Provide 3-6 evidence bullets with dates.
 - Note uncertainties and limitations.
-- Provide sources grouped by claim.
+- Provide sources as a simple list of exact URLs read.

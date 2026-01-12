@@ -11,7 +11,7 @@ List models configured in claude-code-router and switch the active model for Cla
 
 ## Quick start
 
-1. List models: `python3 /home/sbuglione/.claude/skills/ccr-model-switcher/scripts/list_models.py`
+1. List models: `python3 scripts/list_models.py`
 2. Switch current session: ask the user to run `/model provider,model`
 3. Set default for future sessions: `python3 scripts/set_default_model.py provider,model`
 
@@ -19,7 +19,7 @@ List models configured in claude-code-router and switch the active model for Cla
 
 ### List available models
 
-- Run `python3 /home/sbuglione/.claude/skills/ccr-model-switcher/scripts/list_models.py`.
+- Run `python3 scripts/list_models.py`.
 - Report provider names, model IDs, and the copy-paste `provider,model` strings.
 - Include the current Router default and `~/.claude/settings.json` model if present.
 

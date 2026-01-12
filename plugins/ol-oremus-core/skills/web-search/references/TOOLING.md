@@ -39,7 +39,7 @@ Inputs:
 - readHeadings (boolean, optional)
 
 Operational notes:
-- Fetch timeout is around 10 seconds.
+- Read timeout is around 10 seconds.
 - JS-heavy pages may convert to empty text.
 - Repeated reads are often faster due to caching.
 

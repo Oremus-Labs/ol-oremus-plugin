@@ -31,7 +31,14 @@ Important: `searxng_web_search` returns a formatted text block, not JSON. It mus
 
 ## Required workflow
 
-### A) Intake and query shaping
+### A) URL-first retrieval (when URLs are provided)
+If the user message contains one or more URLs:
+1) Do not use `WebFetch`/`Fetch`/`WebSearch`.
+2) Call `web_url_read` for each URL.
+3) If the content is truncated or the relevant section is missing, automatically re-read additional chunks using `startChar`/`maxLength` until the needed section is captured.
+4) Only fall back to non-MCP retrieval if `web_url_read` fails, and only after asking the user to confirm.
+
+### B) Intake and query shaping
 1) Restate the user goal and constraints (timeframe, geography, version, budget).
 2) Identify ambiguity and ask one concise clarifying question if needed; otherwise proceed with a labeled assumption.
 3) Draft 3-6 queries:
@@ -42,7 +49,7 @@ Important: `searxng_web_search` returns a formatted text block, not JSON. It mus
    - Primary documentation query ("documentation", "spec", "release notes").
    - Optional disconfirming query ("problems", "limitations", "controversy").
 
-### B) Search execution (searxng_web_search)
+### C) Search execution (searxng_web_search)
 - Run the strongest 3-6 queries.
 - Use `pageno=2` only if page 1 is weak or too homogeneous.
 - Set `time_range` based on urgency:
@@ -58,29 +65,29 @@ Important: `searxng_web_search` returns a formatted text block, not JSON. It mus
 - Rank using relevance score, source credibility, recency, and topical diversity.
 - Shortlist 3-7 URLs max.
 
-### D) Deep reading (web_url_read)
+### E) Deep reading (web_url_read)
 For each shortlisted URL:
 1) `web_url_read` with `readHeadings=true`.
 2) Select the best heading and fetch with `section` plus `maxLength`.
 3) If still too long, use `paragraphRange` or `startChar`/`maxLength` chunking.
 4) Extract only the needed content.
 
-### E) Synthesis and verification
+### F) Synthesis and verification
 - Cross-check critical claims with 2+ independent credible sources when stakes are high or numbers are involved.
 - If sources conflict, present both and prioritize primary or official sources.
 
-### F) Response format (user-facing)
+### G) Response format (user-facing)
 1) Direct answer or recommendation (concise).
 2) Key evidence (bullets, with dates if relevant).
 3) Nuances, edge cases, or uncertainty.
-4) Sources (grouped by claim; include dates when available).
+4) Sources (simple list of exact URLs read via `web_url_read`).
 
-### G) Failure modes and recovery
+### H) Failure modes and recovery
 - If no results, broaden the query, remove time filters, or try synonyms.
 - If a URL read returns empty, switch to a more accessible source.
 - If paywalled, use other coverage or official summaries.
 
-### H) Rate-limit recovery (SearXNG + VPN rotation)
+### I) Rate-limit recovery (SearXNG + VPN rotation)
 Use this when search results return consistent 429/captcha errors or SearXNG fails repeatedly.
 
 Run the recovery script (preferred, minimal context):
